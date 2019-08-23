@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
+import android.widget.Toast
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -111,6 +113,7 @@ class MainActivity : AppCompatActivity() {
             } catch (e: java.lang.RuntimeException) {
                 print("some error")
                 text_calc.setText("ERROR!")
+                Toast.makeText(this, "Wrong Expression.", Toast.LENGTH_SHORT).show()
             }
         }
 
