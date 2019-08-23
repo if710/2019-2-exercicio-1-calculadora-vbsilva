@@ -103,7 +103,15 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_Equal.setOnClickListener {
-            //TODO
+            try {
+                val expr = eval(text_calc.text.toString()).toString()
+                text_calc.setText(expr)
+
+                text_info.setText(text_calc.text)
+            } catch (e: java.lang.RuntimeException) {
+                print("some error")
+                text_calc.setText("ERROR!")
+            }
         }
 
 
