@@ -2,12 +2,112 @@ package br.ufpe.cin.android.calculadora
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+    // Setando os listeners dos botoes existentes no layout
+        btn_0.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '0')
+        }
+
+        btn_1.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '1')
+        }
+
+        btn_2.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '2')
+        }
+
+        btn_3.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '3')
+        }
+
+        btn_4.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '4')
+        }
+
+        btn_5.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '5')
+        }
+
+        btn_6.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '6')
+        }
+
+        btn_7.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '7')
+        }
+
+        btn_8.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '8')
+        }
+
+        btn_9.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '9')
+        }
+
+
+        btn_LParen.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '(')
+        }
+
+        btn_RParen.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + ')')
+        }
+
+        btn_Add.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '+')
+        }
+
+        btn_Subtract.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '-')
+        }
+
+        btn_Multiply.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '*')
+        }
+
+        btn_Divide.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '/')
+        }
+
+        btn_Dot.setOnClickListener {
+            val textField = text_calc.text.toString()
+            text_calc.setText(textField + '.')
+        }
+
+        btn_Clear.setOnClickListener {
+            text_calc.setText("")
+        }
+
+        btn_Equal.setOnClickListener {
+            //TODO
+        }
+
+
+
     }
 
 
