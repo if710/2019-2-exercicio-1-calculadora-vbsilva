@@ -13,7 +13,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-    // Setando os listeners dos botoes existentes no layout
+        //super.onSaveInstanceState(savedInstanceState);
+
+        // carregando valores salvos nos campos
+        if (savedInstanceState != null) {
+            text_info.setText(savedInstanceState.getCharSequence("calc_state"))
+        }
+
+
+
+        // Setando os listeners dos botoes existentes no layout
+    // acessando o campo de texto e adicionando o digito clicado
         btn_0.setOnClickListener {
             val textField = text_calc.text.toString()
             text_calc.setText(textField + '0')
@@ -104,6 +114,8 @@ class MainActivity : AppCompatActivity() {
             text_calc.setText("")
         }
 
+        // tenta valorar a expressao encontrada no campo de texto da calculadora e atualizar o campo com o novo valor digitado
+        // em caso de falha na tentativa de valoracao, um toast é acionado informando o erro
         btn_Equal.setOnClickListener {
             try {
                 val expr = eval(text_calc.text.toString()).toString()
@@ -119,6 +131,15 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    // metodo para salvar estado da calculadora
+    public override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        //super call recommended
+        super.onSaveInstanceState(savedInstanceState)
+
+        // salvo o estado do resultado da calculadora para restaurar no onCreate
+        savedInstanceState?.putCharSequence("calc_state", text_info.text)
     }
 
 
